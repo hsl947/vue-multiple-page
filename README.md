@@ -1,4 +1,4 @@
-# Vue多页面网页解决脚手架
+# Vue多页面脚手架
 
 结合 Hbuilder 使用,可以快速开发 WebApp
 
@@ -7,6 +7,7 @@
 - `支持 ES6/ES7 语法`
 - `使用 VConsole 调试`
 - `局域网便捷调试,不插数据线也可以调试`
+- `纯原生html5+开发，体验堪比原生=> ` [h5+文档](http://www.html5plus.org/doc/)
 
 ## 文件结构
 ```shell
