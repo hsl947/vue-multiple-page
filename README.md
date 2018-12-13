@@ -14,18 +14,38 @@
 ├── build  项目构建配置
 ├── config  开发相关配置
 ├── static  打包所需静态资源
+├── tests  测试相关
 └── src
-    └── assets  项目静态资源
-        ├── icons  自定义图标资源
-        └── images  图片资源
-    ├── components  业务组件
-    ├── config  项目运行配置
-    ├── directive  自定义指令
-    ├── libs  封装工具函数
-    ├── locale  多语言文件
-    ├── mock  mock模拟数据
-    ├── router  路由配置
-    ├── store  Vuex配置
-    ├── view  页面文件
-    └── tests  测试相关
+    └── assets 项目静态资源
+        ├── css  项目css文件
+        ├── img  图片资源
+        └── js   项目js文件
+    └── utils  项目静态资源
+        ├── common.js   项目公用js
+        ├── request.js  接口请求js
+        ├── store.js    项目本地存储js
+        ├── update.js   app检测升级js
+        └── webview.js  页面组件js
+    ├── components  项目复用组件
+    ├── page  项目页面（可嵌套路径）
+    ├── App.vue  项目入口文件
+    ├── main.js  项目入口文件js
+    └── page.json  页面路由配置文件
+└── manifest.json   app项目配置文件
+```
+
+
+### First install dependencies
+```
+npm i
+``` 
+
+### Compiles and hot-reloads for development
+```
+npm run dev
+```
+
+### Compiles and minifies for production
+```
+npm run build
 ```
