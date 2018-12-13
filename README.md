@@ -13,9 +13,8 @@
 .
 ├── build  项目构建配置
 ├── config  开发相关配置
-├── public  打包所需静态资源
+├── static  打包所需静态资源
 └── src
-    ├── api  AJAX请求
     └── assets  项目静态资源
         ├── icons  自定义图标资源
         └── images  图片资源
