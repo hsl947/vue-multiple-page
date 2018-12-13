@@ -1,0 +1,7 @@
+{
+  "index|plusReady": "./src/main.js",
+  "user.index|plusReady": "./src/page/user/index.js",
+  "seek.index|plusReady": "./src/page/seek/index.js",
+  "heartBeat.index|plusReady": "./src/page/heartBeat/index.js",
+  "message.index|plusReady": "./src/page/message/index.js"
+}

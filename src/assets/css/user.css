@@ -1,0 +1,17 @@
+/*
+* @Author: Hong
+* @Date:   2018-12-13 10:24:25
+* @Last Modified by:   Hong
+* @Last Modified time: 2018-12-13 10:53:18
+*/
+body{
+	padding: 0;
+	margin: 0;
+}
+.main{
+	height: 5rem;
+	font-size: .6rem;
+	text-align: center;
+	background: #ccc;
+}
+
