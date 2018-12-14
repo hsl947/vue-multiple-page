@@ -87,23 +87,28 @@ export default {
 	        // 初始化绘制首个tab按钮
 	        util.toggleNview(0);
 	      },
+	      showTargetView: function(targetPage, activePage){
+	      	plus.webview.show(targetPage, "fade-in", 300, function(){
+	          	//隐藏当前 除了第一个父窗口
+			        if (activePage !== plus.webview.getLaunchWebview()) {
+			          plus.webview.hide(activePage);
+			        }
+	        });
+	        
+	      },
 	      /**
 	       * 点击切换tab窗口
 	       */
 	      changeSubpage: function(targetPage, activePage, aniShow) {
 	        //若为iOS平台或非首次显示，则直接显示
 	        if (plus.os.name == "iOS" || aniShow[targetPage.id]) {
-	          plus.webview.show(targetPage);
+	          util.showTargetView(targetPage, activePage);
 	        } else {
 	          //否则，使用fade-in动画，且保存变量
 	          var temp = {};
 	          temp[targetPage.id] = "true";
 	          Object.assign(aniShow, temp);
-	          plus.webview.show(targetPage);
-	        }
-	        //隐藏当前 除了第一个父窗口
-	        if (activePage !== plus.webview.getLaunchWebview()) {
-	          plus.webview.hide(activePage);
+	          util.showTargetView(targetPage, activePage);
 	        }
 	      },
 	      /**

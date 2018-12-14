@@ -10,7 +10,10 @@ export default {
     return {};
   },
   components: {},
-  mounted() {},
+  mounted() {
+  	//连续点击2次退出
+    this.$dbExit();
+  },
   methods: {},
   watch: {}
 };

@@ -13,6 +13,8 @@ export default {
   },
   components: {},
   mounted() {
+  	//连续点击2次退出
+    this.$dbExit();
   	this.$refs.main.style.paddingTop = plus.navigator.getStatusbarHeight()+'px';
   },
   methods: {
