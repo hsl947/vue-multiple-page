@@ -208,9 +208,9 @@
 			]
 		},
     	"statusbar": {
-	        "immersed": "supportedDevice",
-	        "style":"dark"
-	    },
+            "immersed": true, //是否为沉浸式状态栏，提交云端打包后生效
+            "style": "light"
+        },
         "splashscreen": {
             "autoclose": false,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
             "waiting": true/*是否在程序启动界面显示等待雪花，true表示显示，false表示不显示。*/

@@ -16,9 +16,9 @@ export default {
           bounceBackground: '#ffffff', //窗口的背景颜色
           titleNView: config.title ? { // 窗口的标题栏控件
             titleText: config.title, // 标题栏文字,当不设置此属性时，默认加载当前页面的标题，并自动更新页面的标题
-            titleColor: config.titleColor || '#000000', // 字体颜色,颜色值格式为"#RRGGBB",默认值为"#000000"
+            titleColor: config.titleColor || '#ffffff', // 字体颜色,颜色值格式为"#RRGGBB",默认值为"#000000"
             titleSize: config.titleSize || "18px", // 字体大小,默认17px
-            backgroundColor: config.backgroundColor || '#ffffff', // 控件背景颜色,颜色值格式为"#RRGGBB",默认值为"#F7F7F7"
+            backgroundColor: config.backgroundColor || '#e4047d', // 控件背景颜色,颜色值格式为"#RRGGBB",默认值为"#F7F7F7"
             type: config.titType || 'default', // 透明渐变样式
             progress: config.progress ? config.progress : { // 标题栏控件的进度条样式
               color: '#ed4b7a' // 进度条颜色,默认值为"#00FF00"
@@ -29,7 +29,8 @@ export default {
             autoBackButton: config.autoBackButton == false ? false : true // 自动绘制返回箭头
           } : false,
           statusbar: { //窗口状态栏样式
-            background: config.statusbarBg || '#ffffff'
+            background: config.statusbarBg || 'transparent',
+            style: config.statusbarStyle || 'dark'
           },
           errorPage: "./noNetwork.index.html"
         },

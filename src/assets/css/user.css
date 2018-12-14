@@ -9,9 +9,11 @@ body{
 	margin: 0;
 }
 .main{
-	height: 5rem;
+	/*height: 5rem;*/
 	font-size: .6rem;
 	text-align: center;
-	background: #ccc;
+	background: linear-gradient(to right, #e4047d 0%, #f17d47 100%);
+	padding-top: 5rem;
+	padding-bottom: 3rem;
 }
 
