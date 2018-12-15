@@ -1,4 +1,4 @@
-# Vue多页面脚手架
+# Vue多页面脚手架(App脚手架)
 
 结合 Hbuilder 使用,可以快速开发 WebApp
 
@@ -50,3 +50,7 @@ npm run dev
 ```
 npm run build
 ```
+
+### Add project to Hbuilder and pack it to an App(.apk / .ipa)
+
+详情=> [Manifest.json文档](http://ask.dcloud.net.cn/article/94)
