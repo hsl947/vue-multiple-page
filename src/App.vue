@@ -88,13 +88,12 @@ export default {
 	        util.toggleNview(0);
 	      },
 	      showTargetView: function(targetPage, activePage){
-	      	plus.webview.show(targetPage, "fade-in", 300, function(){
+	      	plus.webview.show(targetPage, "fade-in", 200, function(){
 	          	//隐藏当前 除了第一个父窗口
 			        if (activePage !== plus.webview.getLaunchWebview()) {
 			          plus.webview.hide(activePage);
 			        }
 	        });
-	        
 	      },
 	      /**
 	       * 点击切换tab窗口
@@ -166,7 +165,24 @@ export default {
 	      subpagesId = util.options.subpagesId,
 	      subpage_style = util.options.subpage_style,
 	      pageW = window.innerWidth,
-	      currIndex = 0;
+	      currIndex = 0,
+	      setIndexStyle = function() {
+					subpage_style.top = plus.navigator.getStatusbarHeight();
+					plus.navigator.setStatusBarStyle('dark');
+				},
+	      showWebview = function(currIndex) {
+					// 匹配对应tab窗口
+					currIndex > 0?
+					targetPage = plus.webview.getWebviewById(subpagesId[currIndex - 1]):
+					targetPage = plus.webview.currentWebview();
+					if(targetPage == activePage) return;
+					//底部选项卡切换
+					util.toggleNview(currIndex);
+					// 子页面切换
+					util.changeSubpage(targetPage, activePage, aniShow);
+					//更新当前活跃的页面
+					activePage = targetPage;
+				};
 	
 	    /**
 	     * 根据判断view控件点击位置判断切换的tab
@@ -195,23 +211,6 @@ export default {
 	      }
 	
 	      // 不做预加载页面了，点击对应的tab时才创建对应的webview，只创建一次，以后直接显示。
-	      function show() {
-	        // 匹配对应tab窗口
-	        if (currIndex > 0) {
-	          targetPage = plus.webview.getWebviewById(subpagesId[currIndex - 1]);
-	        } else {
-	          targetPage = plus.webview.currentWebview();
-	        }
-	        if (targetPage == activePage) {
-	          return;
-	        }
-	        //底部选项卡切换
-	        util.toggleNview(currIndex);
-	        // 子页面切换
-	        util.changeSubpage(targetPage, activePage, aniShow);
-	        //更新当前活跃的页面
-	        activePage = targetPage;
-	      }
 	      //防止重复创建页面
 	      if (!plus.webview.getWebviewById(subpagesId[currIndex - 1])) {
 	        let sub = plus.webview.create(
@@ -223,9 +222,9 @@ export default {
 	        sub.hide();
 	        // append到当前父webview
 	        self.append(sub);
-	        show();
+	        showWebview(currIndex);
 	      } else {
-	        show();
+	        showWebview(currIndex);
 	      }
 	    });
   	}
